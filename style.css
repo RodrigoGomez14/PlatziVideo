@@ -1,0 +1,66 @@
+body{
+    display: flex;
+    overflow: hidden;
+}
+.nav{
+    background: gray;
+    width: 20%;
+    height: 100vh;
+    overflow: hidden;
+    color:white
+}
+.home{
+    background: #171c30;
+    width: 80%;
+    height: 100vh;
+    overflow-y: scroll;
+    color: white !important;
+}
+.category img{
+    width: 160px;
+    height: 260px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px grey;
+    object-fit: cover
+}
+.category .col{
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap
+}
+.movie{
+    position: relative
+}
+.movie .container-fluid,
+.movie .row{
+    height: 100%;
+    align-items: flex-end
+}
+.movie #star{
+    color: gold;
+    text-shadow: 2px 2px 5px black
+}
+.movie #trailer{
+    color: red;
+    text-shadow: 2px 2px 5px black;
+}
+.movie #imdb{
+    color: goldenrod;
+    text-shadow: 2px 2px 5px black
+}
+.movie #trailer:hover,
+.movie #imdb:hover{
+    cursor: pointer;
+    transition: .3s;
+    transform: scale(1.5)
+}
+.movie .overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+
+}
