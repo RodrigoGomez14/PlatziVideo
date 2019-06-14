@@ -4,14 +4,19 @@ body{
 }
 .nav{
     background: gray;
-    width: 20%;
+    width: 15%;
     height: 100vh;
     overflow: hidden;
     color:white
 }
+.nav .container,
+.nav .row{
+    height: 100%;
+}
+
 .home{
     background: #171c30;
-    width: 80%;
+    width: 100vw;
     height: 100vh;
     overflow-y: scroll;
     color: white !important;
@@ -29,7 +34,19 @@ body{
     flex-wrap: nowrap
 }
 .movie{
-    position: relative
+    position: relative;
+    animation-name: movie;
+    animation-duration: 2s;
+}
+@keyframes movie{
+    from{
+        transform: scale(0);
+        opacity: 0
+    }
+    to{
+        transform: scale(1);
+        opacity: 1
+    }
 }
 .movie .container-fluid,
 .movie .row{
@@ -60,7 +77,10 @@ body{
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
-
+    transition: .3s
+}
+.movie .overlay:hover{
+    background: rgba(0, 0, 0, 0)
 }

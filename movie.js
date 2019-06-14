@@ -2,7 +2,7 @@
     async function getData(url) {
         const response = await fetch(url)
         const data = await response.json()
-        return data.data.movies
+        return data.data.movie
     }
     function createTemplate(HTMLString) {
         const html = document.implementation.createHTMLDocument()
@@ -48,9 +48,7 @@
       </div>
     </div>`
     }
-    function renderMovieList(list, container) {
-        list.forEach((movie) => {
-            console.log(movie)
+    function renderMovieList(movie, container) {
             const HTMLString = movieItemTemplate(movie)
             const movieElement = createTemplate(HTMLString)
             const $ytButton = movieElement.children[1].children[0].children[0].children[1].children[0].children[0];
@@ -61,41 +59,14 @@
             $imdbButton.addEventListener("click", () => {
                 window.open("https://www.imdb.com/title/" + $imdbButton.getAttribute("link"))
             })
-            movieElement.addEventListener("click", () => {
-                localStorage.setItem('movie', movieElement.getAttribute("idMovie"))
-                window.location.href='movie.html'
-            })
             container.append(movieElement)
-        })
-        container.children[0].remove()
     }
 
-    const $buttonSearch = document.getElementById("button-addon2")
-    $buttonSearch.addEventListener("click", async e => {
-        const search = e.path[3].children[0].value
-        const response = await getData("https://yts.lt/api/v2/list_movies.json?query_term="+search)
-    })
 
-    const pageAction = Math.floor(Math.random()*30)
-    const $actionList = document.getElementById("actionList")
-    const actionList = await getData('https://yts.lt/api/v2/list_movies.json?genre=action&minimun_rating=9&sort_by=like_count&limit=50&page='+pageAction)
-    renderMovieList(actionList, $actionList)
-    const pageComedia = Math.floor(Math.random()*30)
-    const $comediaList = document.getElementById("comediaList")
-    const comediaList = await getData('https://yts.lt/api/v2/list_movies.json?genre=comedy&minimun_rating=9&sort_by=like_count&limit=50&page='+pageComedia)
-    renderMovieList(comediaList, $comediaList)
-    const pageAventura = Math.floor(Math.random()*30)
-    const $adventureFantasy = document.getElementById("adventureFantasy")
-    const adventureFantasy = await getData('https://yts.lt/api/v2/list_movies.json?genre=adventure&genre=fantasy&minimun_rating=9&sort_by=like_count&limit=50&page='+pageAventura)
-    renderMovieList(adventureFantasy, $adventureFantasy)
-    const pageTerror = Math.floor(Math.random()*30)
-    const $terror = document.getElementById("terror")
-    const terror = await getData('https://yts.lt/api/v2/list_movies.json?genre=horror&minimun_rating=9&sort_by=like_count&limit=50&page='+pageTerror)
-    renderMovieList(terror, $terror)
-    const pageRomance = Math.floor(Math.random()*30)
-    const $romance = document.getElementById("romance")
-    const romance = await getData('https://yts.lt/api/v2/list_movies.json?genre=romance&minimun_rating=9&sort_by=like_count&limit=50&page='+pageRomance)
-    renderMovieList(romance, $romance)
+    const $movie = document.getElementById("movie")
+    const movie = await getData('https://yts.lt/api/v2/movie_details.json?movie_id='+localStorage.getItem('movie'))
+    console.log(movie)
+    renderMovieList(movie, $movie)
 
 
 
