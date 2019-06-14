@@ -15,7 +15,7 @@
 
 <body>
     <!-- Home -->
-    <section class="home">
+    <section class="home" id="home">
         <div class="container-fluid ">
             <div class="row mt-4">
                 <div class="col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center">
@@ -34,7 +34,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col pt-1 pb-1" id="actionList">
-
+                                <div class="d-flex justify-content-center mt-2 mb-2">
+                                    <div class="spinner-border" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -45,6 +49,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col pt-1 pb-1" id="comediaList">
+                                <div class="d-flex justify-content-center mt-2 mb-2">
+                                    <div class="spinner-border" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -55,6 +64,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col col pt-1 pb-1" id="adventureFantasy">
+                                <div class="d-flex justify-content-center mt-2 mb-2">
+                                    <div class="spinner-border" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -65,6 +79,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col col pt-1 pb-1" id="terror">
+                                <div class="d-flex justify-content-center mt-2 mb-2">
+                                    <div class="spinner-border" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -75,6 +94,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col col pt-1 pb-1" id="romance">
+                                <div class="d-flex justify-content-center mt-2 mb-2">
+                                    <div class="spinner-border" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -83,6 +107,28 @@
         </div>
     </section>
     <!-- /Home -->
+
+    <!-- Search -->
+    <section id="searchContainer">
+        <div class="container-fluid ">
+            <div class="row mt-4">
+                <div class="col-12 mt-1 mb-4 category">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1> <i class="fas fa-arrow-left" id="back"></i></h1>
+                            </div>
+                            <div class="col pt-1 pb-1" id="search">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Search -->
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

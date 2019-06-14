@@ -1,5 +1,5 @@
 body{
-    display: flex;
+    background: #171c30;
     overflow: hidden;
 }
 .nav{
@@ -15,11 +15,16 @@ body{
 }
 
 .home{
-    background: #171c30;
     width: 100vw;
     height: 100vh;
     overflow-y: scroll;
     color: white !important;
+}
+#searchContainer{
+    display: none
+}
+#back{
+    color: white
 }
 .category img{
     width: 160px;

@@ -1,0 +1,23 @@
+.home{
+    background: #171c30;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    color: white !important;
+}
+.home img{
+    height: 90vh
+}
+#imdb{
+    color: goldenrod;
+    text-shadow: 2px 2px 5px black
+}
+#star{
+    color: gold;
+    text-shadow: 2px 2px 5px black
+}
+#imdb:hover{
+    cursor: pointer;
+    transition: .3s;
+    transform: scale(1.5)
+}
